@@ -25,12 +25,6 @@ provider "aws" {
 }
 
 
-# Crear una clave SSH
-resource "aws_key_pair" "web_key" {
-  key_name   = "clave_ssh"
-  public_key = file("~/.ssh/id_rsa.pub")
-}
-
 
 # Defino el Security_Group
 resource "aws_security_group" "sec_group1" {
@@ -83,8 +77,6 @@ resource "aws_instance" "web" {
       Name = "FreeTier_Desafio13" 
     }
   )
-
-  key_name = aws_key_pair.web_key.key_name
 
   vpc_security_group_ids = [aws_security_group.sec_group1.id]
 

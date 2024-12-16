@@ -8,16 +8,6 @@ terraform {
   required_version = ">= 1.4.0"
 }
 
-# Declarar las variables
-variable "AWS_ACCESS_KEY_ID" {
-  description = "Clave de acceso de AWS"
-  type        = string
-}
-
-variable "AWS_SECRET_ACCESS_KEY" {
-  description = "Clave secreta de AWS"
-  type        = string
-}
 
 # Configurar el proveedor de AWS usando las variables
 provider "aws" {

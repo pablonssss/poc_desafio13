@@ -18,7 +18,7 @@ provider "aws" {
 
 # Defino el Security_Group.
 resource "aws_security_group" "sec_group1" {
-  name        = "web_security_group"
+  name        = "web_security_group-{random_string_suffix.id}"
   description = "Permitir trafico HTTP, HTTPS y SSH"
 
 
@@ -52,6 +52,10 @@ resource "aws_security_group" "sec_group1" {
     to_port     = 0
     protocol    = "-1" # Todo el tráfico saliente permitido
     cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  resource "random_string" "suffix" {
+    length = 6
   }
 }
 

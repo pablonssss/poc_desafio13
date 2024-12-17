@@ -24,7 +24,7 @@ fi
 
 # Configuración de Git y Terraform
 echo "Asegurando repositorio Git..."
-cd $REPO_DIR
+cd "$REPO_DIR"
 
 # Verifica cambios en el repositorio
 if [[ $(git status --porcelain) ]]; then

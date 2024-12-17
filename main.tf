@@ -16,7 +16,7 @@ provider "aws" {
 
 
 
-# Defino el Security_Group
+# Defino el Security_Group.
 resource "aws_security_group" "sec_group1" {
   name        = "web_security_group"
   description = "Permitir trafico HTTP, HTTPS y SSH"

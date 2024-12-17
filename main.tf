@@ -56,6 +56,8 @@ resource "aws_security_group" "sec_group1" {
 
   resource "random_string" "suffix" {
     length = 6
+    special = false
+    upper = false
   }
 }
 

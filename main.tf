@@ -15,6 +15,11 @@ provider "aws" {
 }
 
 
+resource "random_string" "suffix" {
+  length = 6
+  special = false
+  upper = false
+}
 
 # Defino el Security_Group.
 resource "aws_security_group" "sec_group1" {
@@ -54,11 +59,6 @@ resource "aws_security_group" "sec_group1" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  resource "random_string" "suffix" {
-    length = 6
-    special = false
-    upper = false
-  }
 }
 
 # Crear una instancia EC2 dentro de Free Tier
